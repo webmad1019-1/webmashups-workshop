@@ -1,2 +1,58 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<section>
+
+</section>
+<link rel="stylesheet" href="stylesheets/reset.css">
+<style>
+  section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .planet {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 20px;
+  }
+</style>
+<script>
+  const URL = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&format=json&where=pl_kepflag=1"
+  const URL2 = "http://localhost:3000/javascripts/exoplanets.json"
+  let planetTextures;
+
+  axios.get("http://localhost:3000/planet-textures")
+    .then(planetTexturesPayload => {
+      planetTextures = planetTexturesPayload.data
+      return axios.get(URL2)
+    })
+    .then(exoplanets => {
+      exoplanets = exoplanets.data
+      exoplanets = exoplanets
+        .filter(exoplanet => exoplanet.pl_radj !== null)
+        .map(exoplanet => {
+          return {
+            size: exoplanet.pl_radj,
+            name: exoplanet.pl_name
+          }
+        })
+        .sort((a, b) => {
+          if (a.size > b.size) return -1
+          if (a.size < b.size) return 1
+        })
+
+      let chosenExoplanets = exoplanets.splice(0, 10)
+
+      chosenExoplanets.forEach((exoplanet, idx) => {
+        let planetDOMEl = document.createElement("div")
+        planetDOMEl.className = "planet"
+        planetDOMEl.style.background = `url(${planetTextures[idx]})`
+
+        document.querySelector("section").appendChild(planetDOMEl)
+      })
+    })
+</script>
