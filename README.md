@@ -2,7 +2,7 @@
 
 # Web mashups microlearning
 
-The Exoplanet Archive API allows programatic access to NASA's Exoplanet Archive database. I am using it to create a creative data visualisation tool.
+The Exoplanet Archive API allows programatic access to NASA's Exoplanet Archive database. I am using it to create a creative data visualisation tool of all the exoplanets that have been already found.
 
 <img src="https://exoplanetarchive.ipac.caltech.edu/images/news/news-image-generic-transit.jpg" alt="Transit" />
 
