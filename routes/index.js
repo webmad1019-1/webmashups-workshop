@@ -9,6 +9,10 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
+router.get("/pack", (req, res) => {
+  res.render("pack");
+});
+
 router.get("/planet-textures", (req, res) => {
   axios.get("https://www.google.com/search?tbm=isch&q=planet+texture").then(googleSearch => {
     const $ = cheerio.load(googleSearch.data);

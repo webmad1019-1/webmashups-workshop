@@ -4,6 +4,7 @@
 </nav>
 <section></section>
 
+<script src="javascripts/common.js"></script>
 <script>
   const URL = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&format=json&where=pl_kepflag=1"
   const URL2 = "http://localhost:3000/javascripts/exoplanets.json"
@@ -15,32 +16,13 @@
       return axios.get(URL2)
     })
     .then(exoplanets => {
-      exoplanets = exoplanets.data
-      exoplanets = exoplanets
-        .filter(exoplanet => exoplanet.pl_radj !== null)
-        .map(exoplanet => {
-          return {
-            size: exoplanet.pl_radj,
-            name: exoplanet.pl_name
-          }
-        })
-        .sort((a, b) => {
-          if (a.size > b.size) return -1
-          if (a.size < b.size) return 1
-        })
+      exoplanets = cleanExoplanets(exoplanets.data)
 
-      let chosenExoplanets = exoplanets.splice(0, 10)
-
-      let smallestPlanet = Math.min(...chosenExoplanets.map(exoplanet => exoplanet.size))
-      let largestPlanet = Math.max(...chosenExoplanets.map(exoplanet => exoplanet.size))
-
-      let scale = d3.scaleLinear().domain([smallestPlanet, largestPlanet]).range([100, 200])
-
-      chosenExoplanets.forEach((exoplanet, idx) => {
+      exoplanets.forEach((exoplanet, idx) => {
         let planetDOMEl = document.createElement("div")
         planetDOMEl.className = "planet"
         planetDOMEl.style.background = `url(${planetTextures[idx]})`
-        planetDOMEl.style.height = planetDOMEl.style.width = `${scale(exoplanet.size)}px`
+        planetDOMEl.style.height = planetDOMEl.style.width = `${exoplanet.scaledSize}px`
         planetDOMEl.title = exoplanet.name
 
         document.querySelector("section").appendChild(planetDOMEl)
