@@ -4,7 +4,7 @@
 
 The Exoplanet Archive API allows programatic access to NASA's Exoplanet Archive database. I am using it to create a creative data visualisation tool of all the exoplanets that have been already found as well as providing random textures based on applying scraping on the google image search website.
 
-<img src="https://raw.githubusercontent.com/webmad1019-1/webmashups-workshop/master/public/images/result2.png" alt="Result 2" />
+<img src="https://raw.githubusercontent.com/webmad1019-1/webmashups-workshop/master/public/images/result2.jpg" alt="Result 2" />
 
 <img src="https://raw.githubusercontent.com/webmad1019-1/webmashups-workshop/master/public/images/result.png" alt="Result" />
 
