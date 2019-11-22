@@ -1,1 +1,3 @@
-https://api.nasa.gov/planetary/apod?api_key=WkT2cUuV27eTLrTggUYaib0YESftyokbGQWvuxrr
+https://api.nasa.gov/
+
+https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&format=json&where=pl_kepflag=1
