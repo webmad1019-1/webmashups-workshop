@@ -4,7 +4,7 @@
 
 The Exoplanet Archive API allows programatic access to NASA's Exoplanet Archive database. I am using it to create a creative data visualisation tool of all the exoplanets that have been already found.
 
-<img src="https://exoplanetarchive.ipac.caltech.edu/images/news/news-image-generic-transit.jpg" alt="Transit" />
+<img src="https://raw.githubusercontent.com/webmad1019-1/webmashups-workshop/master/public/images/result.png" alt="Result" />
 
 Install the project via `npm install` and then run it  via `npm run dev`
 
@@ -21,4 +21,3 @@ Confirmed exoplanets service: https://exoplanetarchive.ipac.caltech.edu/cgi-bin/
 * In order to see the all the exoplanets in a circle packing arrangement on http://localhost:3000/pack
 
 * Random planet textures served via cheerio scraping on http://localhost:3000/planet-textures
-
