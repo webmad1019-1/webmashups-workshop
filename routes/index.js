@@ -6,8 +6,8 @@ const cheerio = require("cheerio");
 const shuffle = array => array.sort(() => Math.random() - 0.5);
 
 router.get("/", (req, res) => {
-  res.render("index")
-})
+  res.render("index");
+});
 
 router.get("/planet-textures", (req, res) => {
   axios.get("https://www.google.com/search?tbm=isch&q=planet+texture").then(googleSearch => {
