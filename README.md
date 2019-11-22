@@ -2,6 +2,10 @@
 
 # Web mashups microlearning
 
+The Exoplanet Archive API allows programatic access to NASA's Exoplanet Archive database. I am using it to create a creative data visualisation tool.
+
+<img src="https://exoplanetarchive.ipac.caltech.edu/images/news/news-image-generic-transit.jpg" alt="Transit" />
+
 Install the project via `npm install` and then run it  via `npm run dev`
 
 ## NASA API 
