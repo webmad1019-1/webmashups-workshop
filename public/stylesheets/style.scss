@@ -1,5 +1,22 @@
 @import "reset.css";
 
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 section {
   width: 100vw;
   height: 100vh;
@@ -17,6 +34,8 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 20px;
+  border:1px solid rgba(0, 0, 0, .15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
 }
 
 /*# sourceMappingURL=style.css.map */
